@@ -1,0 +1,569 @@
+[
+{
+  "rule_id": "set_call_logic_found",
+  "name": "Set/Call logic Found in clipboard",
+  "patterns": [
+    { 
+      "pattern": "^(?!https?\\:).*?\\bset\\s.*?(?:\\%|call)", 
+      "re_flags": "si",
+      "target": "all"
+    }
+  ]
+},
+{
+  "rule_id": "path_expansion_found_in_clipboard",
+  "name": "Path Expnsion Found in Clipboard",
+  "patterns": [
+    { 
+      "pattern": "^(?!https?\\:).*?\\:\\~-?\\d+\\s*(?:,\\s*\\d+)*?\\%", 
+      "re_flags": "si",
+      "target": "all"
+    }
+  ]
+},
+{
+  "rule_id": "for_in_logic_in_clipboard",
+  "name": "For/In Logic found in clipboard",
+  "patterns": [
+    { 
+      "pattern": "^(?!https?\\:)\\bFor\\s*.*?\\bIN", 
+      "re_flags": "si",
+      "target": "all"
+    }
+  ]
+},
+{
+    "rule_id": "obfuscated_curl_command",
+    "name": "Obfuscated curl command",
+    "patterns": [
+      { 
+        "pattern": "curl", 
+        "re_flags": "si",
+        "target": "normalized"
+      },
+      { 
+        "pattern": "curl", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_msiexec_command",
+    "name": "Obfuscated msiexec command",
+    "patterns": [
+      { 
+        "pattern": "msiexec", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "msiexec", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_mshta_command",
+    "name": "Obfuscated mshta command",
+    "patterns": [
+      { 
+        "pattern": "mshta", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "mshta", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_powershell_command",
+    "name": "Obfuscated PowerShell command",
+    "patterns": [
+      { 
+        "pattern": "powershell", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "powershell", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_rundll32_command",
+    "name": "Obfuscated rundll32 command",
+    "patterns": [
+      { 
+        "pattern": "rundll32", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "rundll32", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_regsvr32_command",
+    "name": "Obfuscated regsvr32 command",
+    "patterns": [
+      { 
+        "pattern": "regsvr32", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "regsvr32", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },  
+  {
+    "rule_id": "obfuscated_certutil_command",
+    "name": "Obfuscated certutil command",
+    "patterns": [
+      { 
+        "pattern": "certutil", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "certutil", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_bitsadmin_command",
+    "name": "Obfuscated bitsadmin command",
+    "patterns": [
+      { 
+        "pattern": "bitsadmin", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "bitsadmin", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_wget_command",
+    "name": "Obfuscated wget command",
+    "patterns": [
+      { 
+        "pattern": "wget", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "wget", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_wscript_command",
+    "name": "Obfuscated wscript command",
+    "patterns": [
+      { 
+        "pattern": "wscript", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "wscript", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_wmic_command",
+    "name": "Obfuscated wmic command",
+    "patterns": [
+      { 
+        "pattern": "wmic", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "wmic", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "85f1dea4-bd88-11ef-b06f-5b0b1bc685d3",
+    "name": "ClickFix Fake Captcha Clipboard Data",
+    "patterns": [
+      { 
+        "pattern": "(?:✅|🟢|(?:reCAPTCHA|Verification|R(?:ay|ef(?:erence)?)|Cloudflare)\\s*(?:ID|Hash|[0-9])|(?:you|I)[\\s\\x22\\x27`]*(?:are|a?m)\\s*(?:not\\s*a\\s*robot|human)|\\.m(?:4a|p3)\\s*#|#\\s*[\\x22\\x27]+\\s*Restart\\s*DNS|#\\s{4})", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "(?:https?:[\\x2f\\x5c]|powershell|msiexec|mshta|cmd\\s*/c)", 
+        "re_flags": "si",
+        "target": "all"
+      }
+    ]
+  },
+  {
+    "rule_id": "85f1dea4-bd88-11ef-b06f-5b0b1bc685d4",
+    "name": "MSIExec Remote Install",
+    "patterns": [
+      { 
+        "pattern": "msixec", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "\\/i", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "https?:[\\x2f\\x5c]", 
+        "re_flags": "si",
+        "target": "all"
+      }
+    ]
+  },
+  {
+    "rule_id": "base64-powershell-payload",
+    "name": "Base64 PowerShell Encoded Commands",
+    "patterns": [
+      { 
+        "pattern": "powershell.*-e", 
+        "re_flags": "i",
+        "target": "all"
+      },
+      { 
+        "pattern": "(?:Invoke-Expression|IEX|New-Object|Net\\.WebClient|frombase64|DownloadString|iwr|Invoke-WebRequest|start-process|\bsaps\b)", 
+        "re_flags": "i", 
+        "target": "base64"
+      }
+    ]
+  },
+  {
+    "rule_id": "likely-download-and-detonate-logic",
+    "name": "Likely Download and Detonate Logic",
+    "patterns": [
+      { 
+        "pattern": "^(?!https?\\:).*?\b(?:curl|powershell|wget).*?(?:[&;|].{4}|start-process|\bsaps\b|invoke-expression|iex|irm|invoke-remote)", 
+        "re_flags": "si",
+        "target": "all"
+      }
+    ]
+  },
+  {
+    "rule_id": "lolbin_found_in_clipboard",
+    "name": "LOLBIN found in clipboard",
+    "patterns": [
+      { 
+        "pattern": "^(?!https?\\:).*?\\b(?:msiexec|powershell|conhost|cmd|wscript|cscript|rundll32|regsvr32|mshta|bitsadmin|certutil|wmic|schtasks|sc|taskkill|at|ftp|tftp|psexec|installutil|msbuild|odbcconf|cmstp|forfiles|mavinject|appvlp|dnscmd|pcwutl|diskshadow|netsh|wsl|csc|taskeng|taskschd)(?:\\x2e|\\b)", 
+        "re_flags": "si",
+        "target": "all"
+      }
+    ]
+  },
+  {
+    "rule_id": "lolbin_remote_payload",
+    "name": "LOLBIN remote Payload",
+    "patterns": [
+      { 
+        "pattern": "(?:(?:rundll|regsvr)32|mshta)", 
+        "re_flags": "i",
+        "target": "all"
+      },
+      { 
+        "pattern": "https?:[\\x2f\\x5c]", 
+        "re_flags": "i",
+        "target": "all"
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_odbcconf_command",
+    "name": "Obfuscated odbcconf command",
+    "patterns": [
+      { 
+        "pattern": "odbcconf", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "odbcconf", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_cmstp_command",
+    "name": "Obfuscated cmstp command",
+    "patterns": [
+      { 
+        "pattern": "cmstp", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "cmstp", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_forfiles_command",
+    "name": "Obfuscated forfiles command",
+    "patterns": [
+      { 
+        "pattern": "forfiles", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "forfiles", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_mavinject_command",
+    "name": "Obfuscated mavinject command",
+    "patterns": [
+      { 
+        "pattern": "mavinject", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "mavinject", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_installutil_command",
+    "name": "Obfuscated InstallUtil command",
+    "patterns": [
+      { 
+        "pattern": "installutil", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "installutil", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_appvlp_command",
+    "name": "Obfuscated AppVLP command",
+    "patterns": [
+      { 
+        "pattern": "appvlp", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "appvlp", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_dnscmd_command",
+    "name": "Obfuscated dnscmd command",
+    "patterns": [
+      { 
+        "pattern": "dnscmd", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "dnscmd", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_pcwutl_command",
+    "name": "Obfuscated pcwutl command",
+    "patterns": [
+      { 
+        "pattern": "pcwutl", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "pcwutl", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_diskshadow_command",
+    "name": "Obfuscated diskshadow command",
+    "patterns": [
+      { 
+        "pattern": "diskshadow", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "diskshadow", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_netsh_command",
+    "name": "Obfuscated netsh command",
+    "patterns": [
+      { 
+        "pattern": "netsh", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "netsh", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_sc_command",
+    "name": "Obfuscated sc command",
+    "patterns": [
+      { 
+        "pattern": "\\bsc(?:\\s+|\\.)(?:create|config|start)\\b", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "\\bsc(?:\\s+|\\.)(?:create|config|start)\\b", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_reg_command",
+    "name": "Obfuscated reg command",
+    "patterns": [
+      { 
+        "pattern": "\\breg(?:\\s+|\\.)(?:add|import|load)\\b", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "\\breg(?:\\s+|\\.)(?:add|import|load)\\b", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_msbuild_command",
+    "name": "Obfuscated MSBuild command",
+    "patterns": [
+      { 
+        "pattern": "msbuild", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "msbuild", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_wsl_command",
+    "name": "Obfuscated WSL command",
+    "patterns": [
+      { 
+        "pattern": "\\bwsl(?:\\s+|\\.|\\-)", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "\\bwsl(?:\\s+|\\.|\\-)", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  },
+  {
+    "rule_id": "obfuscated_csc_command",
+    "name": "Obfuscated CSC command",
+    "patterns": [
+      { 
+        "pattern": "\\bcsc\\.exe\\b", 
+        "re_flags": "si",
+        "target": "all"
+      },
+      { 
+        "pattern": "\\bcsc\\.exe\\b", 
+        "re_flags": "si",
+        "target": "raw",
+        "negated": true
+      }
+    ]
+  }
+]
+
